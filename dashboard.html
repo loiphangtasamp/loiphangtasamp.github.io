@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>product manager by EMO</title>
+    <!-- agular import -->
+    <script src="/libary/js/angular/angular.min.js"></script>
+    <script src="/libary/js/angular/angular-route/angular-route.min.js"></script>
+    <script src="/libary/js/angular/my_angular/my_angular.js"></script>
+    <!-- data import -->
+    <script src="/data/product.js"></script>
+    <!-- link import datatable -->
+    <link rel="stylesheet" href="/libary/css/my_css/dashboard.css" />
+    <link rel="stylesheet" href="/libary/css/my_css/scroll_bar/scrollbar.css" />
+
+    <!-- link my css_col-xl-2 -->
+    <link
+      rel="stylesheet"
+      href="/libary/css/my_css/col-xl-2/aside/sidebar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/libary/css/my_css/col-xl-2/elements_active/aside_active.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/libary/css/my_css/col-xl-2/elements_active/aside_active.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/libary/css/my_css/col-xl-2/elements_active/sidebar_active_collapse.css"
+    />
+    <link rel="stylesheet" href="/libary/css/my_css/transition.css" />
+    <!-- link my css_col-xl-10 -->
+    <link
+      rel="stylesheet"
+      href="/libary/css/my_css/col-xl-10/header_searching.css"
+    />
+    <link rel="stylesheet" href="/libary/css/my_css/col-xl-10/footer.css" />
+    <link
+      rel="stylesheet"
+      href="/libary/css/my_css/col-xl-10/container_main_dashboard.css"
+    />
+    <!-- link import css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body ng-app="myApp">
+    <div class="container-fluid row">
+      <div class="col-xl-2">
+        <!-- sidebar menu -->
+        <aside class="aside-menu">
+          <div class="card">
+            <!-- header logo sidebar menu -->
+            <div class="card-header">
+              <h2><a href="#!/home">DASHBOARD</a></h2>
+              <button class="btn" id="btn-sub">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+            <!-- sidebar menu -->
+            <div class="card-body">
+              <div class="accordion" id="accordion">
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="mb-0" id="headding-manager">
+                      <button
+                        id="btn-collapse"
+                        class="btn btn-block text-left"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse-manager"
+                        aria-expanded="true"
+                        aria-controls="collapse-manager"
+                      >
+                        <i class="fas fa-tasks" id="relink-name"></i>
+                        <span class="link_name">Manager</span>
+                        <i class="fas fa-angle-down"></i>
+                      </button>
+                    </h2>
+                  </div>
+                  <div
+                    class="collapse"
+                    id="collapse-manager"
+                    aria-labelledby="heading-manager"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li
+                          class="tittle list-group-item disabled"
+                          style="pointer-events: none"
+                        >
+                          Manager
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#!/product">Product</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="mb-0" id="headding-statistic">
+                      <button
+                        id="btn-collapse"
+                        class="btn btn-block text-left"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse-statistic"
+                        aria-expanded="true"
+                        aria-controls="collapse-statistic"
+                      >
+                        <i class="fas fa-chart-line" id="relink-name"></i>
+                        <span class="link_name">Statistic</span>
+                        <i class="fas fa-angle-down"></i>
+                      </button>
+                    </h2>
+                  </div>
+                  <div
+                    class="collapse"
+                    id="collapse-statistic"
+                    aria-labelledby="heading-statistic"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li
+                          class="tittle list-group-item disabled"
+                          style="pointer-events: none"
+                        >
+                          Statistic
+                        </li>
+                        <li class="list-group-item">
+                          <a href="timesheets.html">Timesheets</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="mb-0" id="headding-carlender">
+                      <button
+                        id="btn-collapse"
+                        class="btn btn-block text-left"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse-carlender"
+                        aria-expanded="true"
+                        aria-controls="collapse-carlender"
+                      >
+                        <i class="far fa-calendar-alt" id="relink-name"></i>
+                        <span class="link_name">Carlender</span>
+                        <i class="fas fa-angle-down"></i>
+                      </button>
+                      <span class="tooltip">Carlender</span>
+                    </h2>
+                  </div>
+                  <div
+                    class="collapse"
+                    id="collapse-carlender"
+                    aria-labelledby="heading-carlender"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li
+                          class="tittle list-group-item disabled"
+                          style="pointer-events: none"
+                        >
+                          Carlender
+                        </li>
+                        <li class="list-group-item">
+                          <a href="timesheets.html">Timesheets</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="mb-0" id="headding-employee">
+                      <button
+                        id="btn-collapse"
+                        class="btn btn-block text-left"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse-employee"
+                        aria-expanded="true"
+                        aria-controls="collapse-employee"
+                      >
+                        <i class="fas fa-address-book" id="relink-name"></i>
+                        <span class="link_name">Employee</span>
+                        <i class="fas fa-angle-down"></i>
+                      </button>
+                      <span class="tooltip">Employee</span>
+                    </h2>
+                  </div>
+                  <div
+                    class="collapse"
+                    id="collapse-employee"
+                    aria-labelledby="heading-employee"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li
+                          class="tittle list-group-item disabled"
+                          style="pointer-events: none"
+                        >
+                          Employee
+                        </li>
+
+                        <li
+                          class="list-group-item list-group-item-action"
+                          data-toggle="tooltip"
+                          data-placement="right"
+                          title="Bảng chấm công"
+                        >
+                          <a href="/Employee/profile_employee.html"
+                            >Profile Employee</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="mb-0" id="headding-client">
+                      <button
+                        id="btn-collapse"
+                        class="btn btn-block text-left"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse-client"
+                        aria-expanded="true"
+                        aria-controls="collapse-client"
+                      >
+                        <i class="far fa-address-book" id="relink-name"></i>
+                        <span class="link_name">Client</span>
+                        <i class="fas fa-angle-down"></i>
+                      </button>
+                      <span class="tooltip">Client</span>
+                    </h2>
+                  </div>
+                  <div
+                    class="collapse"
+                    id="collapse-client"
+                    aria-labelledby="heading-client"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li
+                          class="tittle list-group-item disabled"
+                          style="pointer-events: none"
+                        >
+                          Client
+                        </li>
+                        <li class="list-group-item">
+                          <a href="timesheets.html">Timesheets</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="mb-0" id="headding-invoices">
+                      <button
+                        id="btn-collapse"
+                        class="btn btn-block text-left"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse-invoices"
+                        aria-expanded="true"
+                        aria-controls="collapse-invoices"
+                      >
+                        <i
+                          class="fas fa-file-invoice-dollar"
+                          id="relink-name"
+                        ></i>
+                        <span class="link_name">Invoices</span>
+                        <i class="fas fa-angle-down"></i>
+                      </button>
+                      <span class="tooltip">Invoices</span>
+                    </h2>
+                  </div>
+                  <div
+                    class="collapse"
+                    id="collapse-invoices"
+                    aria-labelledby="heading-invoices"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li
+                          class="tittle list-group-item disabled"
+                          style="pointer-events: none"
+                        >
+                          Invoices
+                        </li>
+                        <li class="list-group-item">
+                          <a href="timesheets.html">Timesheets</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="mb-0" id="headding-guarantee">
+                      <button
+                        id="btn-collapse"
+                        class="btn btn-block text-left"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapse-guarantee"
+                        aria-expanded="true"
+                        aria-controls="collapse-guarantee"
+                      >
+                        <i class="fas fa-tools" id="relink-name"></i>
+                        <span class="link_name">Guarantee</span>
+                        <i class="fas fa-angle-down"></i>
+                      </button>
+                      <span class="tooltip">Guarantee</span>
+                    </h2>
+                  </div>
+                  <div
+                    class="collapse"
+                    id="collapse-guarantee"
+                    aria-labelledby="heading-guarantee"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li
+                          class="tittle list-group-item disabled"
+                          style="pointer-events: none"
+                        >
+                          Guarantee
+                        </li>
+                        <li class="list-group-item">
+                          <a href="timesheets.html">Timesheets</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer bg-light">
+              <i class="far fa-question-circle"></i> HELP
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-xl-10">
+        <div class="container-main">
+          <div class="card">
+            <div class="card-header bg-light">
+              <div class="search-box">
+                <input
+                  type="text"
+                  class="search-txt form-control"
+                  placeholder="Search here..."
+                />
+              </div>
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn btn-user dropdown-toggle"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span class="user-icon">
+                    <img src="/libary/images/hinh1.jpg" alt="" />
+                  </span>
+                  <span class="user-name">Emo Phan</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#!/profile">Profile</a>
+                  <a class="dropdown-item" href="#!/">Logout</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <ng-view></ng-view>
+            </div>
+            <div class="card-footer">
+              <div class="assign bg-light">Coppy Right &copy; Emo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- link import my js -->
+  <script src="/libary/js/my_js/Elements_active/sidebar.js"></script>
+  <!-- link import js -->
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- link import icon/font-awesome -->
+  <script
+    src="https://kit.fontawesome.com/84a001e866.js"
+    crossorigin="anonymous"
+  ></script>
+</html>
